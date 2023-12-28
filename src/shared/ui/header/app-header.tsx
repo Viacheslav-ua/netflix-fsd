@@ -4,24 +4,27 @@ import clsx from "clsx"
 import { ReactNode, FC } from "react"
 import Image from "next/image"
 import { usePathname, useRouter } from "next/navigation"
-import { ROUTES } from "../constants/routes"
-import { UiButton } from "./ui-button"
+import { ROUTES } from "@/shared/constants/routes"
+import { UiButton } from "@/shared/ui/ui-button"
+import { AppNavbar } from "./app-navbar"
 
 
 
-enum NavbarLinks {
-  HOME = 'Головна',
-  MOVIES = 'Фільми',
-  FAVORITES = 'Улюблені',
+// enum NavbarLinks {
+//   [ROUTES.HOME] = 'Головна',
+//   MOVIES = 'Фільми',
+//   FAVORITES = 'Улюблені',
 
-}
+// }
 
-export type UiHeaderProps = {
+
+
+export type AppHeaderProps = {
   className?: string,
   isAuth?: boolean,
 }
 
-export const UiHeader: FC<UiHeaderProps> = ({ className, isAuth, }) => {
+export const AppHeader: FC<AppHeaderProps> = ({ className, isAuth, }) => {
 
   const pathname = usePathname()
   const router = useRouter()
@@ -43,8 +46,9 @@ export const UiHeader: FC<UiHeaderProps> = ({ className, isAuth, }) => {
           className={clsx("h-24 w-36", isAuth && "cursor-pointer")}
           alt="logo" />
 
-        {/* <button className="flex items-center bg-red-600 py-1 px-4 text-white hover:bg-red-700 transition" onClick={() => router.push(ROUTES.AUTH)}>Увійти</button> */}
-        <UiButton variant="secondary">Увійти</UiButton>
+        <AppNavbar />
+
+        <UiButton variant="secondary" onClick={() => router.push(ROUTES.AUTH)}>Увійти</UiButton>
       </div>
     </header>
   )
