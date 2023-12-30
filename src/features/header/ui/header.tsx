@@ -34,20 +34,24 @@ export const Header: FC<AppHeaderProps> = ({ className, isAuth, }) => {
           className={clsx("h-24 w-36", isAuth && "cursor-pointer")}
           alt="logo" />
 
-        <Navbar />
+        {isAuth && <Navbar />}
 
-        <div className="flex-row ml-auto gap-7 items-center">
-          <div>
+        <div className="flex ml-auto gap-3 items-center">
+        {isAuth && <div>
             <Image
-              src={'/images/devbro.png'}
-              width={30}
-              height={30}
+              src={'/images/account.svg'}
+              width={100}
+              height={100}
+              className="h-8 w-8 cursor-pointer text-green-500 mr-4"
               alt="avatar" />
-          </div>
+
+            <UiButton variant="secondary" onClick={() => { }}>Вийти</UiButton>
+          </div>}
+
+          {!isAuth && <UiButton variant="secondary" onClick={() => router.push(ROUTES.AUTH)}>Увійти</UiButton>}
         </div>
 
-        {isAuth && <UiButton variant="secondary" onClick={() => { }}>Вийти</UiButton>}
-        {!isAuth && <UiButton variant="secondary" onClick={() => router.push(ROUTES.AUTH)}>Увійти</UiButton>}
+
       </div>
     </header>
   )

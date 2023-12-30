@@ -1,8 +1,5 @@
 import { UiBgMain } from '@/shared/ui/ui-bg-main'
 import { Header } from '@/features'
-import Image from 'next/image'
-// import { BgProvider } from './components/BgProvider'
-// import Navbar from './components/Navbar'
 
 const LandingPage = () => {
   return (

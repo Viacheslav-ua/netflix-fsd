@@ -9,7 +9,7 @@ const NavbarLinks = {
 }
 
 export interface LinkNavbar {
-  name: string
+  label: string
   path: string
   isActive: boolean
 }
@@ -18,8 +18,8 @@ export const useNavbar = (): LinkNavbar[] => {
 
   const pathname = usePathname()
 
-  const links = Object.entries(NavbarLinks).map(([path, name]) => ({
-    name,
+  const links = Object.entries(NavbarLinks).map(([path, label]) => ({
+    label,
     path,
     isActive: path === pathname,
   }))
