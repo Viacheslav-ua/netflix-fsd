@@ -1,32 +1,20 @@
 'use client'
 
 import clsx from "clsx"
-import { ReactNode, FC } from "react"
+import { FC } from "react"
 import Image from "next/image"
-import { usePathname, useRouter } from "next/navigation"
+import { useRouter } from "next/navigation"
 import { ROUTES } from "@/shared/constants/routes"
 import { UiButton } from "@/shared/ui/ui-button"
-import { AppNavbar } from "./app-navbar"
-
-
-
-// enum NavbarLinks {
-//   [ROUTES.HOME] = 'Головна',
-//   MOVIES = 'Фільми',
-//   FAVORITES = 'Улюблені',
-
-// }
-
-
+import { Navbar } from "./navbar"
 
 export type AppHeaderProps = {
   className?: string,
   isAuth?: boolean,
 }
 
-export const AppHeader: FC<AppHeaderProps> = ({ className, isAuth, }) => {
+export const Header: FC<AppHeaderProps> = ({ className, isAuth, }) => {
 
-  const pathname = usePathname()
   const router = useRouter()
 
   const handleNavClick = (newPath: string) => {
@@ -40,15 +28,26 @@ export const AppHeader: FC<AppHeaderProps> = ({ className, isAuth, }) => {
     <header className={clsx("w-full fixed z-20", className)}>
       <div className="px-4 md:px-16 flex items-center justify-between transition duration-500">
         <Image
-          src={'./images/logo.svg'}
+          src={'/images/logo.svg'}
           width={100}
           height={100}
           className={clsx("h-24 w-36", isAuth && "cursor-pointer")}
           alt="logo" />
 
-        <AppNavbar />
+        <Navbar />
 
-        <UiButton variant="secondary" onClick={() => router.push(ROUTES.AUTH)}>Увійти</UiButton>
+        <div className="flex-row ml-auto gap-7 items-center">
+          <div>
+            <Image
+              src={'/images/devbro.png'}
+              width={30}
+              height={30}
+              alt="avatar" />
+          </div>
+        </div>
+
+        {isAuth && <UiButton variant="secondary" onClick={() => { }}>Вийти</UiButton>}
+        {!isAuth && <UiButton variant="secondary" onClick={() => router.push(ROUTES.AUTH)}>Увійти</UiButton>}
       </div>
     </header>
   )
