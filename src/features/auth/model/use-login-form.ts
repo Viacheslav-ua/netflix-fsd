@@ -12,7 +12,8 @@ export const useLoginForm = () => {
   return {
     register,
     handleSubmit,
-    
+    errorMessage: '',
+    isPending: false,
   }
 
 }

@@ -1,5 +1,5 @@
 import { UiBgMain } from '@/shared/ui/ui-bg-main'
-import { Header } from '@/features'
+import { Header } from '@/features/header'
 
 const LandingPage = () => {
   return (
