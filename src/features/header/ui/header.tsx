@@ -7,7 +7,6 @@ import { usePathname, useRouter } from "next/navigation"
 import { ROUTES } from "@/shared/constants/routes"
 import { UiButton } from "@/shared/ui/ui-button"
 import { Navbar } from "./navbar"
-import Link from "next/link"
 import { UiLogo } from "@/shared/ui/ui-logo"
 
 export type AppHeaderProps = {
