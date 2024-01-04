@@ -15,7 +15,7 @@ export const LoginForm = () => {
   const { register, handleSubmit, isPending, errorMessage } =  useLoginForm()
 
   return (
-    <form className="flex flex-col gap-2 justify-center" /*onSubmit={handleSubmit}*/>
+    <form className="flex flex-col gap-2 justify-center" onSubmit={handleSubmit}>
       <UiTextField inputProps={{type: "email", ...register("email", {required: true})}} className="mb-2" label="Електронна пошта" />
       <UiTextField inputProps={{type: "password", ...register("password", {required: true})}} className="mb-8" label="Пароль" />
     
