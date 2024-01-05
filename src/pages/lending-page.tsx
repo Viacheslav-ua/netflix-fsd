@@ -1,4 +1,4 @@
-const LandingPage = () => {
+export const LandingPage = () => {
   return (
     <div className='min-h-screen flex flex-col justify-center items-center  px-5 text-center gap-10'>
       <h1 className='font-extrabold text-white text-[48px]'>Фільми серіали й інший контент без обмежань</h1>
@@ -6,5 +6,3 @@ const LandingPage = () => {
     </div>
   )
 }
-
-export default LandingPage

@@ -1,7 +1,7 @@
 import { UiBgMain } from '@/shared/ui/ui-bg-main'
 import { Header } from '@/features/header'
 
-const HomePage = () => {
+export const HomePage = () => {
   return (
     <UiBgMain>
       <Header />
@@ -12,5 +12,3 @@ const HomePage = () => {
     </UiBgMain>
   )
 }
-
-export default HomePage

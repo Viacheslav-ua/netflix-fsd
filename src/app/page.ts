@@ -1,3 +1,3 @@
-import Lending from "@/pages/lending"
+import { LandingPage } from "@/pages/lending-page"
 
-export default Lending
+export default LandingPage
