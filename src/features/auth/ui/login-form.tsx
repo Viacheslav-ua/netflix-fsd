@@ -7,12 +7,18 @@ import { UiButton } from "@/shared/ui/ui-button"
 import { UiLink } from "@/shared/ui/ui-link"
 
 import { FaGoogle, FaGithub } from 'react-icons/fa'
-
+import { signIn } from 'next-auth/react'
+import { useRouter } from "next/navigation"
 
 
 export const LoginForm = () => {
+  const router = useRouter()
 
   const { register, handleSubmit, isPending, errorMessage } =  useLoginForm()
+
+  const signInGoogle = async () => {
+    await signIn('github', {callbackUrl: "/home"})
+  }
 
   return (
     <form className="flex flex-col gap-2 justify-center" onSubmit={handleSubmit}>
@@ -34,7 +40,7 @@ export const LoginForm = () => {
 
         <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center  pb-[1px]
          cursor-pointer hover:opacity-50 transition"
-         onClick={() => console.log('GitHub sign-in')}
+         onClick={signInGoogle}
          >
           <FaGithub size={32} />
         </div>
