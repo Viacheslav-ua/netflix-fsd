@@ -2,8 +2,8 @@
 import { signIn } from 'next-auth/react'
 import { FaGoogle, FaGithub } from 'react-icons/fa'
 
-import { UiTextField } from "@/shared/ui/ui-text-field"
 import { useLoginForm } from "@/features/auth/model/use-login-form"
+import { UiTextField } from "@/shared/ui/ui-text-field"
 import { ROUTES } from "@/shared/constants/routes"
 import { UiButton } from "@/shared/ui/ui-button"
 import { UiLink } from "@/shared/ui/ui-link"
@@ -11,17 +11,8 @@ import { UiOAuth } from "@/shared/ui/ui-oauth"
 
 
 export const LoginForm = () => {
-  // const router = useRouter()
-
+  
   const { register, handleSubmit, isPending, errorMessage } =  useLoginForm()
-
-  // const signInGoogle = async () => {
-  //   await signIn('github', {callbackUrl: "/home"})
-  // }
-
-  // const signInGoogle = async () => {
-  //   await signIn('github', {callbackUrl: "/home"})
-  // }
 
   return (
     <form className="flex flex-col gap-2 justify-center" onSubmit={handleSubmit}>
