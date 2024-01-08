@@ -13,7 +13,7 @@ export const Navbar = () => {
           {links.map(link => (
             <UiLink className={link.isActive 
               ? "text-white cursor-default border-b-2 pb[1px]" 
-              : "text-gray-300 hover:text-white"} 
+              : "text-gray-300 cursor-pointer hover:text-white"} 
               href={link.path} key={link.path}>
               {link.label}
             </UiLink>
