@@ -1,4 +1,4 @@
-import { Billboard } from '@/widgets/Billboard/ui/billboard'
+import { Billboard } from '@/widgets/billboard/ui/billboard'
 
 export const HomePage = async () => {
   
