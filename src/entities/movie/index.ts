@@ -1,1 +1,8 @@
-export { getBillboardVideo, getAllMovies, getAllFavorites } from './actions'
+export { 
+  getBillboardVideo, 
+  getAllMovies, 
+  getAllFavorites,
+  getMovieById,
+  addMovieToFavorite,
+  
+} from './actions'

@@ -1,6 +1,4 @@
-import { ENDPOINTS } from '@/shared/constants/endpoints'
-import axios from 'axios'
-import React, { FC, useState } from 'react'
+import React, { FC } from 'react'
 import {AiOutlineCheck, AiOutlinePause} from 'react-icons/ai/'
 import { useToggleFavorite } from '../model/use-toggle-favorite'
 

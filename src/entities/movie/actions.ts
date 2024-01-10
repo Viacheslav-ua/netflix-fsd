@@ -44,3 +44,40 @@ export async function getAllFavorites() {
     throw new Error(error)
   }
 }
+
+export async function getMovieById(movieId: string) {
+  try {
+    return await prisma.movie.findUnique({
+      where:{
+        id: movieId
+      }
+    })
+  } catch {
+    return null
+  }
+} 
+
+export async function addMovieToFavorite(email: string, movieId: string) {
+  try {
+
+    const movie = await getMovieById(movieId)
+    if(!movie) throw new Error("Movie not found")
+
+    return await prisma.user.update({
+      where: {
+        email: email,
+      },
+
+      data: {
+        favoriteIds:{
+          push: movieId,
+        }
+      }
+    })
+
+  } catch (error: any){
+
+    return new Error(error)
+
+  }
+} 
