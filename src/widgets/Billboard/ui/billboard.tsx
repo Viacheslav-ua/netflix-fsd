@@ -11,14 +11,11 @@ export const Billboard = async () => {
     <div className="relative h-[56.25vw]">
       <video 
         poster={billboardVideoData?.thumbnailUrl}      
-        // poster={'https://image.tmdb.org/t/p/original/hEhGrcST85vMd63PBDgPBqih2tR.jpg'}      
-              
         className="w-full h-[56.25vw] object-cover brightness-[60%] transition duration-500"
         autoPlay
         muted
         loop
         src={billboardVideoData?.videoUrl}>
-         {/* src={'https://drive.google.com/file/d/17nuRqQ-xnaHj_QSS9XTnj3ZxEqIJJdSh/view?usp=sharing'}  */}
       </video>
 
       <div className="absolute top-[30%] md:top-[40%] ml-4 md:ml-16">

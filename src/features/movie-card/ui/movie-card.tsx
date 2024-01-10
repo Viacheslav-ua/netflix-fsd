@@ -6,6 +6,7 @@ import Image from "next/image"
 import { Movie } from "@prisma/client"
 import { BsFillPlayCircleFill as PlayIcon } from "react-icons/bs"
 import { ROUTES } from "@/shared/constants/routes"
+import { FavoriteButton } from "./favorite-button"
 
 type MovieCardProps = {
   movieData: Movie & { isFavorite: boolean }
@@ -49,13 +50,13 @@ export const MovieCard: FC<MovieCardProps> = ({ movieData }) => {
                 className="cursor-pointer w-6 h-6 lg:w-10 lg:h-10 rounded-full flex justify-center
                 items-center transition text-white hover:text-red-500"
               />
-              {/* <FavoriteButton movieId={movieData.id} isFavorite={movieData.isFavorite} /> */}
+              <FavoriteButton movieId={movieData.id} isFavorite={movieData.isFavorite} />
             </div>
             <div className="flex mt-4 gap-2 items-center">
-              <p className="text-white text-[10px] lg:text-sm">{movieData.duration}</p>
+              Тривалість <p className="text-white text-[10px] lg:text-sm">{movieData.duration}</p>
             </div>
             <div className="flex mt-4 gap-2 items-center">
-              <p className="text-white text-[10px] lg:text-sm">{movieData.genre}</p>
+              Жанр <p className="text-white text-[10px] lg:text-sm">{movieData.genre}</p>
             </div>
           </div>
         </div>
