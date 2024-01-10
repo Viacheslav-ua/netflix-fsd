@@ -1,11 +1,10 @@
-import { getAllMovies } from "@/entities/movie/actions"
 import { getCurrentUser } from "@/entities/session/actions"
+import { Movie } from "@prisma/client"
 
-export const extendMovies = async () => {
+export const extendMovies = async (movies: Movie[]) => {
 
   const currentUser = await getCurrentUser()
-  const movies = await getAllMovies()
-
+  
   return movies.map(movie => {
 
     return {

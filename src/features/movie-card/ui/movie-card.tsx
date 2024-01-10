@@ -8,8 +8,10 @@ import { BsFillPlayCircleFill as PlayIcon } from "react-icons/bs"
 import { ROUTES } from "@/shared/constants/routes"
 import { FavoriteButton } from "./favorite-button"
 
+export type ExtendMovie = Movie & { isFavorite: boolean }
+
 type MovieCardProps = {
-  movieData: Movie & { isFavorite: boolean }
+  movieData: ExtendMovie
 }
 
 export const MovieCard: FC<MovieCardProps> = ({ movieData }) => {

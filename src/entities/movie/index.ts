@@ -1,1 +1,1 @@
-export { getBillboardVideo } from './actions'
+export { getBillboardVideo, getAllMovies, getAllFavorites } from './actions'
