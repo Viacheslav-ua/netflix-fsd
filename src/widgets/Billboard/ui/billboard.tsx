@@ -5,12 +5,12 @@ import { PlayButton } from './play-button'
 export const Billboard = async () => {
 
   const billboardVideoData = await getBillboardVideo()
-  if(!billboardVideoData) return null
+  if (!billboardVideoData) return null
 
   return (
     <div className="relative h-[56.25vw]">
-      <video 
-        poster={billboardVideoData?.thumbnailUrl}      
+      <video
+        poster={billboardVideoData?.thumbnailUrl}
         className="w-full h-[56.25vw] object-cover brightness-[60%] transition duration-500"
         autoPlay
         muted
@@ -26,7 +26,7 @@ export const Billboard = async () => {
           {billboardVideoData?.description}
         </p>
         <div className="flex items-center mt-3 md:mt-4 gap-3">
-          <PlayButton movieId={billboardVideoData?.id}/>
+          <PlayButton movieId={billboardVideoData?.id} />
         </div>
       </div>
     </div>

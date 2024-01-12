@@ -18,8 +18,13 @@ export type AppHeaderProps = {
 export const Header: FC<AppHeaderProps> = ({ className, isAuth, }) => {
 
   const router = useRouter()
-  const pathname = usePathname()
+  const pathname = usePathname() || ''
   const isLending = pathname === ROUTES.LANDING
+
+  const isWatchPath = /watch/.test(pathname)
+
+  if(isWatchPath) return null
+  
 
   return (
     <header className={clsx("w-full fixed z-20", className)}>

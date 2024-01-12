@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/features/header'
-import { UiBgMain } from '@/shared/ui/ui-bg-main'
 import { getSession } from '@/entities/session/actions'
+import { BgMain } from '@/widgets/bg-main'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,10 +20,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="uk">
       <body className={inter.className}>
-        <UiBgMain>
+        <BgMain>
           <Header isAuth={isAuth} />
           {children}
-        </UiBgMain>
+        </BgMain>
       </body>
     </html>
   )

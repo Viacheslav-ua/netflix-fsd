@@ -1,0 +1,1 @@
+export { BgMain } from './ui/bg-main'

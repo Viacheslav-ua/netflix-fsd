@@ -52,26 +52,47 @@ export async function getMovieById(movieId: string) {
         id: movieId
       }
     })
-  } catch {
-    return null
+  } catch (error: any) {
+    throw new Error(error)
   }
 } 
 
 export async function addMovieToFavorite(email: string, movieId: string) {
   try {
-
+        
     const movie = await getMovieById(movieId)
     if(!movie) throw new Error("Movie not found")
 
     return await prisma.user.update({
       where: {
-        email: email,
+        email,
       },
 
       data: {
         favoriteIds:{
           push: movieId,
         }
+      }
+    })
+
+  } catch (error: any){
+
+    return new Error(error)
+
+  }
+} 
+
+export async function removeMovieToFavorite(email: string, favoriteIds: string[]) {
+  try {
+    console.log(favoriteIds, email);
+    
+    return await prisma.user.update({
+      where: {
+        email,
+      },
+
+      data: {
+        favoriteIds,
       }
     })
 

@@ -8,15 +8,19 @@ export const useToggleFavorite = (movieId: string, isFavorite: boolean) => {
 
   const toggleFavorite = async () => {
     if(isFavorite) {
-      const response = await axios.delete(ENDPOINTS.FAVORITES, { data: movieId })
-
+      const response = await axios.patch(ENDPOINTS.FAVORITES, { data: movieId })
+      if(response.status === 200) {
+        setIsFavoriteMovie((prevIsFavoriteMovie) => !prevIsFavoriteMovie)
+      }
+      // location.reload()
+      return
     }
-    const response = await axios.post(ENDPOINTS.FAVORITES, { data: movieId })
 
+    const response = await axios.post(ENDPOINTS.FAVORITES, { data: movieId })
     if(response.status === 200) {
       setIsFavoriteMovie((prevIsFavoriteMovie) => !prevIsFavoriteMovie)
+      // location.reload
     }
-    
   }
   
   return { isFavoriteMovie, toggleFavorite }
