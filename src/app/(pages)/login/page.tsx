@@ -3,7 +3,7 @@
 import { LoginForm } from "@/features/auth"
 import { UiFormPageLayout } from "@/shared/ui/layouts/ui-form-page-layout"
 
-export function LoginPage() {
+function LoginPage() {
   return (
     <UiFormPageLayout 
     title="Увійти"
@@ -11,3 +11,5 @@ export function LoginPage() {
     />
   )
 }
+
+export default LoginPage

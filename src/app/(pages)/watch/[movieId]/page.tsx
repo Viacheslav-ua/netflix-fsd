@@ -5,6 +5,8 @@ type WatchParams = {
 
 }
 
-export const WatchPage = async ({params}: {params: WatchParams}) => {
+const WatchPage = async ({params}: {params: WatchParams}) => {
   return <Watch params={params} />
 }
+
+export default WatchPage

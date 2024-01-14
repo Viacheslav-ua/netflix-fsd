@@ -1,8 +1,11 @@
+
 import { Billboard } from '@/widgets/billboard/ui/billboard'
 
-export const HomePage = async () => {
+const HomePage = async () => {
   
   return (
     <Billboard />
   )
 }
+
+export default HomePage

@@ -5,7 +5,7 @@ import { UiFormPageLayout } from "@/shared/ui/layouts/ui-form-page-layout"
 
 
 
-export function RegisterPage() {
+function RegisterPage() {
   return (
     <UiFormPageLayout 
     title="Реєстрація"
@@ -13,3 +13,5 @@ export function RegisterPage() {
     />
   )
 }
+
+export default RegisterForm

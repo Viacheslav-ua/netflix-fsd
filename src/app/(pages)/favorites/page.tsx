@@ -3,7 +3,7 @@ import { ExtendMovie } from '@/features/movie-card'
 import { MoviesList, extendMovies } from '@/widgets/movies-list'
 import { Movie } from '@prisma/client'
 
-export const FavoritesPage = async () => {
+const FavoritesPage = async () => {
 
   const movies: Movie[] = await getAllFavorites()
   const movieData: ExtendMovie[] = await extendMovies(movies)
@@ -14,3 +14,5 @@ export const FavoritesPage = async () => {
     </div>
   )
 }
+
+export default FavoritesPage

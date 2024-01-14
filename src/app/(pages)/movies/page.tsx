@@ -4,7 +4,7 @@ import { MoviesList } from '@/widgets/movies-list'
 import { extendMovies } from '@/widgets/movies-list'
 import { Movie } from '@prisma/client'
 
-export const MoviesPage = async () => {
+const MoviesPage = async () => {
   
   const movies: Movie[] = await getAllMovies()
   const movieData: ExtendMovie[] = await extendMovies(movies)
@@ -15,3 +15,5 @@ export const MoviesPage = async () => {
     </div>
   )
 }
+
+export default MoviesPage
