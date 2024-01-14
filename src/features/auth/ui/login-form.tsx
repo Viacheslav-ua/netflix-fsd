@@ -25,11 +25,11 @@ export const LoginForm = () => {
 
       {/* account */}
       <div className="flex items-center justify-center py-6 gap-4">
-        <UiOAuth onClick={() => signIn('google', {callbackUrl: process.env.NEXTAUTH_URL + ROUTES.HOME})}>
+        <UiOAuth onClick={() => signIn('google', {callbackUrl: ROUTES.HOME})}>
           <FaGoogle size={32} />
         </UiOAuth>
 
-        <UiOAuth onClick={() => signIn('github', {callbackUrl: process.env.NEXTAUTH_URL + ROUTES.HOME})}>
+        <UiOAuth onClick={() => signIn('github', {callbackUrl: ROUTES.HOME})}>
           <FaGithub size={32} />
         </UiOAuth>
       </div>
