@@ -2,11 +2,10 @@
 
 import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
-import { signIn } from 'next-auth/react'
 
-import { ROUTES } from '@/shared/constants/routes'
 import axios from 'axios'
 import { login } from './use-login-form'
+import { ENDPOINTS } from '@/shared/constants/endpoints'
 
 
 
@@ -24,7 +23,7 @@ export const useRegisterForm = () => {
 
   const registerUser = async(data: RegisterFormData) => {
     try {
-      await axios.post('/api/register', data)
+      await axios.post(ENDPOINTS.REGISTER, data)
       const {name, ...loginData} = data
 
       login(loginData)
