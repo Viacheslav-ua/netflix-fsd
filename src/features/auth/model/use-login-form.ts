@@ -32,20 +32,6 @@ export const useLoginForm = () => {
   const router = useRouter()
   const { register, handleSubmit } = useForm<LoginFormData>()
 
-
-  // const login = async(data: LoginFormData) => {
-  //   try {
-  //     await signIn('credentials', {
-  //       ...data, 
-  //       redirect: true,
-  //       callbackUrl: ROUTES.HOME,
-  //     })
-  //   } catch (error) {
-  //     console.log('login error', error);
-      
-  //   }
-  // }
-
   return {
     register,
     handleSubmit: handleSubmit(data => login(data)),

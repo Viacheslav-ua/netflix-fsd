@@ -3,8 +3,6 @@
 import { RegisterForm } from "@/features/auth"
 import { UiFormPageLayout } from "@/shared/ui/layouts/ui-form-page-layout"
 
-
-
 function RegisterPage() {
   return (
     <UiFormPageLayout 
@@ -14,4 +12,4 @@ function RegisterPage() {
   )
 }
 
-export default RegisterForm
+export default RegisterPage

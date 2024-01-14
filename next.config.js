@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    // domains: ["i.ytimg.com", "image.tmdb.org", "encrypted-tbn0.gstatic.com"],
+    // domains: ["i.ytimg.com", "image.tmdb.org"],
     remotePatterns: [
       {
         protocol: 'https',
