@@ -12,14 +12,12 @@ export const useToggleFavorite = (movieId: string, isFavorite: boolean) => {
       if(response.status === 200) {
         setIsFavoriteMovie((prevIsFavoriteMovie) => !prevIsFavoriteMovie)
       }
-      // location.reload()
       return
     }
 
     const response = await axios.post(ENDPOINTS.FAVORITES, { data: movieId })
     if(response.status === 200) {
       setIsFavoriteMovie((prevIsFavoriteMovie) => !prevIsFavoriteMovie)
-      // location.reload
     }
   }
   

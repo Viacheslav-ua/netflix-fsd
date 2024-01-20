@@ -11,10 +11,11 @@ import { FavoriteButton } from "./favorite-button"
 export type ExtendMovie = Movie & { isFavorite: boolean }
 
 type MovieCardProps = {
-  movieData: ExtendMovie
+  movieData: ExtendMovie,
+  revalidateFavorites: () => Promise<void>
 }
 
-export const MovieCard: FC<MovieCardProps> = ({ movieData }) => {
+export const MovieCard: FC<MovieCardProps> = ({ movieData, revalidateFavorites }) => {
 
   const router = useRouter()
 
@@ -52,7 +53,7 @@ export const MovieCard: FC<MovieCardProps> = ({ movieData }) => {
                 className="cursor-pointer w-6 h-6 lg:w-10 lg:h-10 rounded-full flex justify-center
                 items-center transition text-white hover:text-red-500"
               />
-              <FavoriteButton movieId={movieData.id} isFavorite={movieData.isFavorite} />
+              <FavoriteButton movieId={movieData.id} isFavorite={movieData.isFavorite} revalidateFavorites={revalidateFavorites} />
             </div>
             <div className="flex mt-4 gap-2 items-center">
               Тривалість <p className="text-white text-[10px] lg:text-sm">{movieData.duration}</p>
